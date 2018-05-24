@@ -1,0 +1,13 @@
+80.28.217.170 - Sin acceso por puerto 22 o 33
+176.31.62.164 - Sin acceso por puerto 22 o 33
+79,159,255,181 - Sin acceso por puerto 22 o 33
+81.33.208.221 - Sin acceso por puerto 22 o 33
+88.14.19.197 - Sin acceso por puerto 22 o 33
+88.21.78.95 - Sin acceso por puerto 22 o 33
+217,126,203,119 - Sin acceso por puerto 22 o 33
+83.53.73.117 - Sin acceso por puerto 22 o 33
+88.8.204.49 - Sin acceso por puerto 22 o 33
+80.24.244.119 - Sin acceso por puerto 22 o 33
+80.26.132.199 - Sin acceso por puerto 22 o 33
+88.5.62.38 - Sin acceso por puerto 22 o 33
+85.53.80.202 - Sin acceso por puerto 22 o 33

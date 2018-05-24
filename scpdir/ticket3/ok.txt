@@ -1,0 +1,5 @@
+
+79.150.236.110 - OK por puerto 33
+83.33.56.97 - OK por puerto 22
+83.56.65.220 - OK por puerto 22
+83.33.62.150 - OK por puerto 22

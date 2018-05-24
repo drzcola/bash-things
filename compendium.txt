@@ -1,0 +1,115 @@
+# Remove files modified X days ago
+
+find <dir> -mtime +X -type f -exec rm -rf {} \;
+
+# Run the last command as root
+
+sudo !!
+
+# Run a command at a given time
+
+echo "<command>" | at <time>
+
+# Get public ip address
+
+curl icanhazip.com
+
+# Mount filesystem through SSH
+
+sshfs user@host:/path/to/folder /path/to/mount/point
+
+# Mount a temporary RAM partition
+
+mount -t tmpfs tmpfs /mnt -o size=1024m
+
+# Compare a remote file with a local file
+
+ssh user@host cat /path/to/remote/file | diff /path/to/local/file -
+
+# SSH through middle host
+
+ssh -t reachable_host ssh unreachable_host
+
+# SSH tunneling through middle host <port 80>
+
+ssh -A -t reachable_host -L 8080:localhost:8080 \
+ssh -A -t second_reachable_host -L 8080:localhost:80
+
+# Make 'less' like 'tail -f'
+
+less +F /path/to/log/file
+
+# Console clock
+
+while sleep 1; do tput sc; tput cup 0 $(($(tput cols)-29));date;tput rc;done & 
+
+# Check if 32 or 64 bits OS
+
+getconf LONG_BIT
+
+# Kill a process that is locking a file
+
+fuser -k <filename>
+
+# Display distro
+
+# Debian-based
+cat /etc/issue
+
+# Redhat-based
+cat /etc/redhat-release
+
+# SuSE-based
+cat /etc/os-release
+
+# Extract tarball without local save
+
+wget -q0 - "http://www.tarball.com/tarball.gz" | tar zxvf - 
+
+# Copy SSH pubkey
+
+cat /path/to/pub/key | ssh user@host "mkdir ~/.ssh; cat >> ~/.ssh/authorized_keys"
+
+# Replace spaces in filenames with underscores
+
+rename 'y/ /_/' *
+
+# Edit remote file with vim
+
+vim scp://user@host//path/to/file
+
+# Generate random password X characters long
+
+strings /dev/urandom | grep -o '[[:alnum:]]' | head -n X | tr -d '\n'; echo
+
+# Mount a .iso file
+
+mount /path/to/file.iso /mnt/cdrom -o loop
+
+# Copy permissions of file1 to file2
+
+chmod --reference file1 file2
+
+# Create backup of file
+
+cp file.txt{,.bak}
+
+# Run file system check on next boot
+
+touch /forcefsck
+
+# Check what program is listening to which port
+
+lsof -i <udp/tcp>:<port number>
+
+# Find files in a date range
+
+find <path> -type f -newermt "%Y-%M-%D" ! -newermt "%Y-%M-%D"
+
+# Copy MySQL Database to a new server via SSH
+
+mysqldump --add-drop-table --extended-insert --force --log-eror=error.log -uUSER -pPASS OLD_DB_NAME | ssh -C user@host "mysql -uUSER -pPASS NEW_DB_NAME"
+
+# Find immutable files
+
+lsattr -R 2>/dev/null | grep -P "(?<=-)i(?=-)"
