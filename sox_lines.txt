@@ -1,0 +1,20 @@
+- MP3 to WAV:
+mpg123 -b 10000 -s input.mp3 | sox -t raw -r 44100 -s -w -c2 - output.wav
+
+- WAV to ALAW:
+sox input.wav -t raw -r 8000 -c 1 -b 8 -e a-law output.alaw
+
+- WAV to ULAW:
+sox input.wav -t raw -r 8000 -c 1 -b 8 -e u-law output.ulaw
+
+- WAV to GSM:
+sox input.wav -t gsm -r 8000 -c 1 -b output.gsm
+
+- WAV to G.729:
+sox input.wav -t raw -r 8000 -c 1 -b 8 -e a-law output.alaw && asterisk -rx 'file convert output.alaw output.g729'
+
+- WAV to SLIN:
+sox input.wav -t raw -r 8000 -c 1 -w -s output.slin
+
+- WAV to MP3:
+lame -b 16 -m m -q 9 --resample 8 input.wav output.mp3
