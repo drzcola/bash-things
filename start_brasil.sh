@@ -28,5 +28,3 @@ tmux new-window
 tmux rename-window -t${SESSION}:4 "PVIVO02"
 tmux send-keys C-a 'ssh pvivo02' Enter
 tmux attach-session -t $SESSION
-tmux send-keys C-a 'ssh bvivo02' Enter
-tmux attach-session -t $SESSION
