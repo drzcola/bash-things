@@ -25,9 +25,12 @@ tmux new-window
 tmux rename-window -t${SESSION}:3 "PVIVO02"
 tmux send-keys 'ssh pvivo02' Enter
 tmux new-window
-tmux rename-window -t${SESSION}:4 "PVIVO04"
+tmux rename-window -t${SESSION}:4 "PVIVO03"
+tmux send-keys 'ssh pvivo03' Enter
+tmux new-window
+tmux rename-window -t${SESSION}:5 "PVIVO04"
 tmux send-keys 'ssh pvivo04' Enter
 tmux new-window
-tmux rename-window -t${SESSION}:5 "NVIVO01"
+tmux rename-window -t${SESSION}:6 "NVIVO01"
 tmux send-keys 'ssh nvivo01' Enter
 tmux attach-session -t $SESSION
