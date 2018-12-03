@@ -12,12 +12,20 @@
 
 hostname=`hostname`
 strg_home=`df -h | grep -w "/home" | tr -s ' ' | cut -d' ' -f4`
+total_home=`df -h | grep -w "/home" | tr -s ' ' | cut -d' ' -f2`
 strg_root=`df -h | grep -w "/" | tr -s ' ' | cut -d' ' -f4`
+total_root=`df -h | grep -w "/" | tr -s ' ' | cut -d' ' -f2`
+strg_usb1=`df -h | grep -w "usb1" | tr -s ' ' | cut -d' ' -f4`
+total_usb1=`df -h | grep -w "usb1" | tr -s ' ' | cut -d' ' -f2`
+strg_usb2=`df -h | grep -w "usb2" | tr -s ' ' | cut -d' ' -f4`
+total_usb2=`df -h | grep -w "usb2" | tr -s ' ' | cut -d' ' -f2`
 
-echo "HOST: "
+echo "HOST: " $hostname
 echo "Espacio en disco: "
-echo "/    :" $strg_root
-echo "/home:" $strg_home
+echo "/    :" $strg_root "/" $total_root
+echo "/home:" $strg_home "/" $total_home
+echo "/usb1:" $strg_usb1 "/" $total_usb1
+echo "/usb2:" $strg_usb2 "/" $total_usb2
 echo -en "\n"
 echo "Contenido del directorio /home/recording/temp: "
 echo `ls /home/recording/temp`
